@@ -2,7 +2,6 @@ import {Hands, PlayResults} from './constants'
 
 export default class RockScissorsPaper {
     constructor() {
-         this.value = 'hello'
     }
 
     play(p1Hand, p2Hand) {

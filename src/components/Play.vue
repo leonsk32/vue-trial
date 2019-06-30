@@ -22,12 +22,13 @@
 </template>
 
 <script>
-import RockScissorsPaper from "./RockScissorsPaper";
 import { Hands, PlayResults } from "./constants";
 
-const rockScissorsPaper = new RockScissorsPaper();
-
 export default {
+  props: {
+    rockScissorsPaper: Object
+  },
+
   data() {
     return {
       p1Hand: Hands.rock,
@@ -54,7 +55,7 @@ export default {
   },
   computed: {
     result() {
-      const result = rockScissorsPaper.play(this.p1Hand, this.p2Hand);
+      const result = this.rockScissorsPaper.play(this.p1Hand, this.p2Hand);
       if (result == PlayResults.p1Wins) {
         return "Player 1 Wins!";
       } else if (result == PlayResults.p2Wins) {
